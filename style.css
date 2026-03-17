@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500&display=swap');
+
+/* ── Variables ─────────────────────────────────────────── */
+:root {
+  --bg:     #F8F7F4;
+  --text:   #1A1A1A;
+  --accent: #2D6CDF;
+  --muted:  #6B7280;
+  --border: #E5E4E0;
+  --card-bg: #FFFFFF;
+}
+
+/* ── Reset / Base ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Navbar ─────────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 56px;
+  transition: box-shadow 0.2s;
+}
+
+.navbar.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+
+.navbar-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.navbar-brand:hover { text-decoration: none; color: var(--accent); }
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+}
+.navbar-links a:hover,
+.navbar-links a.active { color: var(--accent); text-decoration: none; }
+
+/* Hamburger (mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+/* ── Page wrapper ───────────────────────────────────────── */
+.page-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 96px 2rem 4rem;
+}
+
+/* ── Section headings ───────────────────────────────────── */
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Hero section ───────────────────────────────────────── */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 2rem 0 3.5rem;
+}
+
+.hero-photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--border);
+  flex-shrink: 0;
+}
+
+.hero-info { flex: 1; }
+
+.hero-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.hero-title {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+.hero-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.hero-social a {
+  color: var(--muted);
+  font-size: 1.25rem;
+  transition: color 0.15s;
+}
+.hero-social a:hover { color: var(--accent); }
+
+/* ── About section ──────────────────────────────────────── */
+.about-section {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.about-section p {
+  max-width: 640px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+/* ── Timeline (experience.html) ─────────────────────────── */
+.timeline-page { padding-top: 5rem; }
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.timeline-header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.timeline {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Vertical center line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: var(--border);
+  transform: translateX(-50%);
+}
+
+.timeline-section-label {
+  position: relative;
+  text-align: left;
+  padding-left: calc(50% - 10px - 160px);
+  margin-bottom: 1rem;
+}
+
+.timeline-section-label span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.timeline-entry {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+/* Dot on the center line */
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 1.2rem;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  z-index: 1;
+}
+
+/* Card shared */
+.timeline-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.1rem 1.3rem;
+  width: calc(50% - 2rem);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.timeline-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.timeline-card .company {
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.timeline-card .date {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.timeline-card p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Right side (most recent) */
+.timeline-entry.right {
+  justify-content: flex-end;
+  padding-right: 0;
+}
+.timeline-entry.right .timeline-card {
+  margin-left: calc(50% + 2rem);
+  margin-right: 0;
+}
+
+/* Left side */
+.timeline-entry.left {
+  justify-content: flex-start;
+}
+.timeline-entry.left .timeline-card {
+  margin-right: calc(50% + 2rem);
+}
+
+/* ── Project cards (projects.html) ──────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.project-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.project-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #555;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  background: #EEF2FB;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.project-links a {
+  color: var(--muted);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.15s;
+}
+.project-links a:hover { color: var(--accent); text-decoration: none; }
+
+/* ── Blog / empty state ─────────────────────────────────── */
+.empty-state {
+  padding: 4rem 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 4rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .hero { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
+  .hero-social { justify-content: center; }
+
+  /* Timeline collapses to single column */
+  .timeline::before { left: 16px; transform: none; }
+
+  .timeline-section-label { padding-left: 40px; }
+
+  .timeline-entry { flex-direction: column; }
+  .timeline-entry::before { left: 16px; transform: none; }
+
+  .timeline-entry.right .timeline-card,
+  .timeline-entry.left .timeline-card {
+    width: 100%;
+    margin-left: 40px;
+    margin-right: 0;
+  }
+
+  .projects-grid { grid-template-columns: 1fr; }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 56px; left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+  .navbar-links.open { display: flex; }
+  .nav-toggle { display: flex; }
+}

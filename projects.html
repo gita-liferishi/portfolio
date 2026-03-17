@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Suvrorup Mukherjee</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <a class="navbar-brand" href="index.html">SM</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-content">
+
+    <p class="section-title">Projects</p>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>Short description of what this project does, the problem it solves, and any notable outcomes. Placeholder — update with your actual project.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">ML</span>
+        </div>
+        <div class="project-links">
+          <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Short description of what this project does, the problem it solves, and any notable outcomes. Placeholder — update with your actual project.</p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">API</span>
+        </div>
+        <div class="project-links">
+          <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>Short description of what this project does, the problem it solves, and any notable outcomes. Placeholder — update with your actual project.</p>
+        <div class="project-tags">
+          <span class="tag">SQL</span>
+          <span class="tag">Spark</span>
+          <span class="tag">Data Pipeline</span>
+        </div>
+        <div class="project-links">
+          <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Suvrorup Mukherjee
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 8);
+    });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
